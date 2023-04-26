@@ -1,9 +1,21 @@
 ---
-title: "DS405 Advanced R"
+title: "Final Project"
+subtitle: "DS405 Advanced R"
 author: "Alii Napoleon"
-date: "2023-04-25"
+date: "25 April 2023"
 output: html_document
 ---
+
+
+### Library Directory
+
+
+##### library(tidyverse)
+
+##### library(here)
+
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -11,9 +23,18 @@ library(tidyverse)
 library(here)
 ```
 
-### Assignment 1
 
-```{r}
+### Assignment 1: Unarchive Project File
+
+
+##### Please download the project file into your working directory. 
+
+##### 1. To start you will need to extract the files into a project directory
+##### 2. Create a list of all the file names that are in that directory
+##### 3. Everything should be done programmatically so you can submit your code script for credit. 
+    
+
+```{r, results='hide'}
 outDir <- here("data")
 
 unzip(here("data/csv_data.zip"), exdir=outDir)
@@ -21,7 +42,14 @@ unzip(here("data/csv_data.zip"), exdir=outDir)
 file.remove(here("data/csv_data/cost-of-living-1-6090711076175872.csv"))
 ```
 
-Delete cost of living 1 csv becasue it is empty
+
+### Assignment 2: Project Directory File Descriptions 
+
+
+##### You need to list all the variables in all of the CSV files that are in the project directory. This all has to be done programmatically in R. Your code will need to be uploaded and workable. 
+
+
+Note: File named "Cost of Living 1" is empty and has been deleted.
 
 
 ```{r}
@@ -51,3 +79,34 @@ all_names <- c(var_name_list)
 
 ```
 
+
+### Assignment 3: Final Project Proposal
+
+
+##### Submit your project proposal here. You do not have to use all the data in the project directory, you just need to build a coherent story with data from the project directory. Write a short paragraph describing what you want to do; you may use bullet points if you like.
+
+
+About ten years ago, I was given an electronic poster that overlaid the *auwai* (waterways) of pre-modern, possibly ancient, *Ahupuaa Waititi*, atop what is now known as Waikiki. It was gifted to me by Mr Tom Penna, of *Ho Mai Ka Pono*. 
+
+In recent weeks, Dr Speck introduced our class to a mapping and geographical programming package called “rayshader”. For my Geo-Tagging and GIS Final Project, I propose utilizing rayshader to generate a 3D rendering of Mr Penna’s Waikiki map.
+
+My most recent communication with Mr Penna was on 11 April and he’s stated that he will provide the necessary PS files to access the map’s layers. Our first goal is to convert the PS vectors to .tiff format for rastorization, to display Old Hawaii in 3D. We will then generate the appropriate base map of modern Waikiki, to receive the overlay. 
+
+It is my hope that this map will raise awareness of what once was, what was lost, and prevent further losses to Hawaii’s lands.
+
+
+### Assignment 4: Final Project Proposal Follow-up
+
+
+##### Submit any proposal changes and updates by this date.
+
+
+Since the last proposal’s submission, Mr Penna has recently provided the mentioned .psb file titled *“Kona Muku”*. This file has since been copied and reformatted as a .tiff file, for use in R-Studio.
+
+The proposed scope of work and project mission is the same. We intend to show the placement and state of the original, undisturbed waterways and aquatic features of Oahu’s southeastern shore; and where these waters would have been today, had Oahu’s shoreline been not altered. Kona Muku, as the map of Oahu’s virgin shores and lands, is to be rendered at full opacity, then overlayed by the same geographical area, as it is today. This will allow viewers an understanding of the extent of the island’s alteration.
+
+It is not certain, given time constraints, whether a rayshader rendering is possible. The primary plotting tool, therefore, will be ggplot.
+
+
+
+#### End 
