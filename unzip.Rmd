@@ -1,0 +1,20 @@
+---
+title: "DS405 Advanced R"
+author: "Alii Napoleon"
+date: "2023-04-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+```
+
+
+```{r}
+outDir <- here("data")
+
+unzip(here("data/csv_data.zip"), exdir=outDir)
+```
+
