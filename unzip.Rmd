@@ -11,10 +11,43 @@ library(tidyverse)
 library(here)
 ```
 
+### Assignment 1
 
 ```{r}
 outDir <- here("data")
 
 unzip(here("data/csv_data.zip"), exdir=outDir)
+
+file.remove(here("data/csv_data/cost-of-living-1-6090711076175872.csv"))
+```
+
+Delete cost of living 1 csv becasue it is empty
+
+
+```{r}
+# Set your project directory
+setwd("/Users/student/Desktop/Alii/DS405_AdvancedR/data/csv_data")
+
+# Get list of all CSV files in directory
+csv_files <- list.files(pattern = "\\.csv$")
+
+# Initialize empty list for variable names
+var_name_list <- list()
+
+# Loop through each file and get variable names
+for (file in csv_files) {
+  # Read in file
+  data <- read.csv(file)
+  
+  # Get variable names
+  var_names <- names(data)
+  
+  # Append variable names to list
+  var_name_list <- append(var_name_list, var_names)
+}
+
+# Combine all variable names into a single object
+all_names <- c(var_name_list)
+
 ```
 
