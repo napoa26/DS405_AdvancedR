@@ -1,0 +1,113 @@
+---
+title: "Final Project"
+subtitle: "DS405 Advanced R"
+author: "Alii Napoleon"
+date: "25 April 2023"
+output: html_document
+---
+
+
+### Library Directory
+
+
+- library(tidyverse)
+
+- library(here)
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+```
+
+
+### Assignment 1: Unarchive Project File
+
+
+- Please download the project file into your working directory. 
+
+  1. To start you will need to extract the files into a project directory
+  2. Create a list of all the file names that are in that directory
+  3. Everything should be done programmatically so you can submit your code script for credit. 
+    
+
+```{r, results='hide'}
+outDir <- here("data")
+
+unzip(here("data/csv_data.zip"), exdir=outDir)
+
+file.remove(here("data/csv_data/cost-of-living-1-6090711076175872.csv"))
+```
+
+
+### Assignment 2: Project Directory File Descriptions 
+
+
+- You need to list all the variables in all of the CSV files that are in the project directory. This all has to be done programmatically    in R. Your code will need to be uploaded and workable. 
+
+
+  - Note: File named "Cost of Living 1" is empty and has been deleted.
+
+
+```{r}
+# Set your project directory
+setwd("/Users/student/Desktop/Alii/DS405_AdvancedR/data/csv_data")
+
+# Get list of all CSV files in directory
+csv_files <- list.files(pattern = "\\.csv$")
+
+# Initialize empty list for variable names
+var_name_list <- list()
+
+# Loop through each file and get variable names
+for (file in csv_files) {
+  # Read in file
+  data <- read.csv(file)
+  
+  # Get variable names
+  var_names <- names(data)
+  
+  # Append variable names to list
+  var_name_list <- append(var_name_list, var_names)
+}
+
+# Combine all variable names into a single object
+all_names <- c(var_name_list)
+
+```
+
+
+### Assignment 3: Final Project Proposal
+
+
+- Submit your project proposal here. You do not have to use all the data in the project directory, you just need to build a coherent story   with data from the project directory. Write a short paragraph describing what you want to do; you may use bullet points if you like.
+
+
+For this class’s final project, I conduct a data-driven analysis of the “demographic-survey” file, within the class-shared data set. With
+it containing sixteen highly specific, qualitative survey questions, there is much insight that one may gain from it. The question: “What is the highest level of education you completed?” set as the explanatory variable, I propose comparative analyses with the following survey questions as response variables:
+
+- “Do you have any children living at home?”
+- “How important do you consider your ethnicity as a part of your self-image?”
+- “How important do you consider your religious identity as a part of your self-image?”
+- “What is your…:
+  - Date-of-birth?”
+  - Ethnicity?”
+  - Gender?”
+  - Marital status?”
+  - Religion?”
+
+
+### Assignment 4: Final Project Proposal Follow-up
+
+
+- Submit any proposal changes and updates by this date.
+
+
+
+
+
+
+#### End 
