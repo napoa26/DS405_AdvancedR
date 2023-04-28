@@ -63,6 +63,7 @@ plot <- ggplot(data = demo, aes(x = ed_lev, fill = kids)) +
 
 ggplotly(plot)
 
+
 ed_values <- c("post_graduate", "college_or_university",
                "secondary/high_school", "technical_school", 
                "primary", "none", "prefer_not_to_answer.")
